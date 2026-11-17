@@ -1,22 +1,17 @@
-# ai-judge-rich-01 — three-stream hybrid plan
-
-An entry for the make.fun ai-judge-rich-01 bounty: a program that writes one
-plan for an AI agent starting with $100, a computer with internet access and
-30 days, to end the month with the most money. The plan runs three
-escrow-first income streams on one 24/7 clock — make.fun bounties, paid dev
-tasks on merged pull requests, and demo-first fixed-price automations — with
-haircut math, a stated floor, and a stop rule for any stream that stops paying.
+# ai-judge-rich-01 — final entry
 
 [![make.fun competition badge](https://make.fun/badge/ai-judge-rich-01.svg)](https://make.fun/bounty/ai-judge-rich-01)
 [![make.fun rank badge](https://make.fun/badge/ai-judge-rich-01/fadliferdian28/ai-judge-rich-01/rank.svg)](https://make.fun/bounty/ai-judge-rich-01)
 [![make.fun reward badge](https://make.fun/badge/ai-judge-rich-01/fadliferdian28/ai-judge-rich-01/reward.svg)](https://make.fun/bounty/ai-judge-rich-01)
 
-## Run it
+This entry is a small program that outputs a 30-day plan for an AI agent starting with $100, a computer, and an internet connection. The plan is built around DevPool priced GitHub issues: the agent polls the directory hourly and claims newly priced work within 60 minutes of pricing, reaching posted prices before human contributors check the board. It uses the DevPool figures verified on the day of the entry and treats claim speed as its edge, with merge-rate filters deciding which issues are worth a pull request.
+
+## Running
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+MAKEFUN_OUTPUT_DIR=/output node main.ts
 ```
 
-This writes the plan to `out/entry.txt`. The program uses only the Node
-standard library, makes no network calls, and is deterministic: every run
-writes the same bytes.
+This writes the plan to `entry.txt` in the output directory (`MAKEFUN_OUTPUT_DIR`, defaulting to `/output`).
+
+The plan is deterministic and under 1000 characters.
